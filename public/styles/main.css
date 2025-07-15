@@ -1,0 +1,47 @@
+h1 {
+  font-family: "Chewy", system-ui;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 36px;
+  color: rgb(106, 81, 49);
+}
+
+.main-container {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.main-info {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  font-size: large;
+  font-family: "Chewy", system-ui;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.additional-info {
+  display: flex;
+  height: max-content;
+  justify-content: space-evenly;
+}
+
+#div1,#div2,#div3,#div4,#div5 {
+  width: 15%;
+  height: 500px;
+  background-color: bisque;
+}
