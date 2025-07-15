@@ -1,18 +1,21 @@
 {
   "name": "uv-helper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "main": "backend/index.js",
+  "type": "module",
+  "author": "Illia Polovynko",
   "license": "ISC",
   "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "build": "tsc",
+    "start": "pnpm nodemon dist/index.js"
+  },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "axios": "^1.10.0",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
   }
 }
