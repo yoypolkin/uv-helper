@@ -3,6 +3,8 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { getCurrentUV, UVData } from './open-uv-api/get-current-uv.js';
 import { generateTitle } from './main-logic/generate-title.js';
+import { getForecastedUV } from './open-uv-api/get-forecasted-uv.js';
+import { parseForcastedData } from './main-logic/parse-forcasted-data.js';
 
 const app: Express = express();
 const port: number = 3000;
@@ -29,8 +31,16 @@ app.get('/uv-help', async (req, res) => {
     Number(latitude),
     Number(longitude)
   );
+  const forecastedData = await getForecastedUV(
+    Number(latitude),
+    Number(longitude)
+  );
+
+  const parsedForecast = parseForcastedData(forecastedData);
+
   res.render('index', {
     title: generateTitle(Number(uvData.uv)),
+    forecastedCards: parsedForecast,
   });
 });
 
