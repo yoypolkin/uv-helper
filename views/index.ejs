@@ -19,11 +19,14 @@
       <button id="sunscreen-btn">Update</button>
     </div>
     <div class="additional-info">
-      <div id="div1"></div>
-      <div id="div2"></div>
-      <div id="div3"></div>
-      <div id="div4"></div>
-      <div id="div5"></div>
+      <% forecastedCards.forEach(card => { %>
+        <%- include('forecast-card', {
+          date: card.date,
+          time: card.time,
+          uv: card.uv,
+          imgSrc: card.imgSrc
+        }) %>
+      <% }); %>
     </div>
   </div>
   
